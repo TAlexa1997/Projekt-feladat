@@ -1,0 +1,56 @@
+html{
+    margin: 5px;
+}
+
+
+
+header{
+    height: 250px;
+    background-color: aqua;
+}
+header img{
+    width: 100%;
+    
+}
+
+nav{
+    text-align: center;
+    margin-top:-40px ;
+}
+
+nav a{
+    margin: 25px;
+    font-size: 18px;
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    text-decoration: none;
+}
+
+article{
+    margin: 50px;
+    
+}
+
+article div{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+article img{
+    height: 250px;
+    margin: 0 auto;
+}
+
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: block;
+ }
