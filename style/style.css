@@ -1,47 +1,61 @@
-html{
-    margin: 5px;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 header{
-    height: 250px;
-    background-color: aqua;
-}
-header img{
-    width: 100%;
-    
+    background-size: cover; 
+    background-position:bottom ;
+    height: 300px; 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items:end;
 }
 
 nav{
-    text-align: center;
-    margin-top:-40px ;
+    margin-bottom: 10px;
 }
 
-nav a{
-    margin: 25px;
-    font-size: 18px;
-    background-color: black;
-    color: aliceblue;
-    padding: 10px;
+nav a {
+    background-color:rgba(182, 188, 190, 0.63); 
+    color: black; 
+    font-weight: 700;
+    border: none; 
+    padding: 4px 8px; 
+    margin: 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 30px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     text-decoration: none;
 }
 
-article{
-    margin: 50px;
-    
+nav a:hover {
+    background-color: hsla(194, 6%, 73%);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
 }
 
-article div{
-    display: grid;
-    grid-template-columns: 60% 40%;
+nav a:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-article img{
-    height: 250px;
-    margin: 0 auto;
+body{
+    min-block-size: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: hsla(194, 6%, 73%);
 }
-
 
 
 footer {
@@ -49,8 +63,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
-    color: white;
+    color: black;
     text-align: center;
     display: block;
  }
