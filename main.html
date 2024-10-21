@@ -1,19 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Főoldal</title>
+    <title>Mágocsi Apartmanház</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+    background-size: cover; 
+    background-position:bottom ;
+    height: 300px; 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items:end;
+}
+
+nav{
+    margin-bottom: 10px;
+}
+
+nav a {
+    background-color:rgba(182, 188, 190, 0.63); 
+    color: black; 
+    font-weight: 700;
+    border: none; 
+    padding: 4px 8px; 
+    margin: 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 30px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: hsla(194, 6%, 73%);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
+}
+
+nav a:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+body{
+    min-block-size: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: hsla(194, 6%, 73%);
+}
+
+article{
+    margin: 20px;
+}
+article img{
+    background-size: cover; 
+    background-position:bottom ;
+    height: 400px; 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items:end;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .prev, .next,.text {font-size: 11px}
+    article img{
+        height:25vh ;
+    }
+  }
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    display: block;
+ }
+
+        /* Animáció görgetésre */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <header style="background-image: url(img/borito.jpg);">
-        <nav>
-            <a href="main.html">Főoldal</a>
-            <a href="galeria.html">Galéria</a>
-            <a href="kapcsolat.html">Kapcsolat</a>
-        </nav>    
-    </header>     
-    <footer>Ezt az oldalt Csongor Bence,Povázson Edina és Tóth Alexandra készítette</footer>
+
+    <header>
+        <h1>Mágocsi Apartmanház</h1>
+    </header>
+
+    <nav>
+        <a href="main.html">Főoldal</a>
+        <a href="galeria.html">Galéria</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+
+    <main>
+        <div class="content">
+            <h2>Kikapcsolódás és horgászat az erdő közelében</h2>
+            <p>A Mágocsi Apartmanház a természet nyugalmában, az erdő közelében található, ideális hely a kikapcsolódásra és horgászatra. Élvezze a csendet és a természet szépségeit!</p>
+
+            <img src="img/apartmanhaz_image1.jpg" alt="Apartmanház">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos vitae maxime nobis quas voluptate exercitationem, ducimus odit expedita explicabo, reprehenderit facilis at, harum nulla distinctio iusto officia quidem molestiae incidunt.</p>
+
+            <img src="img/apartmanhaz_image2.jpg" alt="Apartmanház tóparttal">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        // Animáció a görgetés hatására
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        function checkScroll() {
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+    </script>
 </body>
 </html>
