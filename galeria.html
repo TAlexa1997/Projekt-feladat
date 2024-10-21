@@ -1,20 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <script src="script/galery.js"></script>
+    <title>Galéria</title>
 </head>
 <body>
-    <header></header> 
-    
-    <nav>
+    <header style="background-image: url(img/borito.jpg);"><nav>
         <a href="main.html">Főoldal</a>
         <a href="galeria.html">Galéria</a>
         <a href="kapcsolat.html">Kapcsolat</a>
-    </nav>
+    </nav></header> 
 
-    
+    <article>
+        <h1 style="margin: 10vh;font-size: 38px;text-align: center;">Galéria</h1>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="img/derek-torsani-9gwPgCa8y-E-unsplash.jpg" style="width:100%">
+              <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="img/borito.jpg" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="img/borito.jpg" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+    </article>
+    <footer>Ezt az oldalt Csongor Bence,Povázson Edina és Tóth Alexandra készítette</footer>
 </body>
 </html>
