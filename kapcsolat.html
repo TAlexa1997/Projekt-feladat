@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/kapcsolat.css">
+    <link rel="stylesheet" href="style/foglalas.css">
     <title>Kapcsolat</title>
 </head>
 <body>
@@ -18,27 +18,39 @@
     </nav>
 </header>
 <main>
-  <div>
-    <div>
-      <h2>Elérhetőségek</h2>
+  
+    <div style="margin: auto;justify-items: center;margin-left: 1rem;">
+      <h2 style="margin: 15px;font-size: 3rem;">Elérhetőségek</h2>
       <p>Név:Samu Bernadett</p>
       <p>Telefonszám:+3630/623-1493</p>
       <p>Cím:7342 Mágocs, Mágocsi Horgásztó és apartmanház</p>
-      <h1>Térkép</h1>		
-      <div class="et_pb_code_inner"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d44051.11275429247!2d18.2115!3d46.365528!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7802cfb3402750db!2zTcOhZ29jc2kgSG9yZ8Ohc3p0w7Mgw6lzIEFwYXJ0bWFuaMOheg!5e0!3m2!1shu!2shu!4v1594652996032!5m2!1shu!2shu" width="800" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+      <br>	
+      <div class="et_pb_code_inner">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d44051.11275429247!2d18.2115!3d46.365528!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7802cfb3402750db!2zTcOhZ29jc2kgSG9yZ8Ohc3p0w7Mgw6lzIEFwYXJ0bWFuaMOheg!5e0!3m2!1shu!2shu!4v1594652996032!5m2!1shu!2shu" width="800" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+      </div>
     </div>
-
-    <form>
-      <h2>Lépjen velünk kapcsolatba:</h2>
-      <label for="vezeteknev">Vezetéknév</label><br>
-      <input type="text" id="vezeteknev" name="vezeteknev" value=""><br>
-      <label for="keresztnev">Keresztnév</label><br>
-      <input type="text" id="keresztnev" name="keresztnev" value=""><br>
-      <label for="telefonszam">Telefonszám</label><br>
-      <input type="number"><br>
-      <input type="submit" value="Küldés">
-    </form> 
-  </div>
+    <div class="form-container">
+    <form action="mailto:info@magocsiapartmanhaz.hu" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Név" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Telefonszám" required>
+      <input type="date" name="arrival" placeholder="Érkezés" required>
+      <input type="date" name="departure" placeholder="Távozás" required>
+      <select name="apartman" required>
+          <option value="" disabled selected>Válassza ki az apartmant</option>
+          <option value="1">1 apartman</option>
+          <option value="2">2 apartman</option>
+      </select>
+      <input type="number" name="guests" placeholder="Hány fővel jön? (max. 10 fő)" required>
+      <textarea name="message" placeholder="További megjegyzések" rows="4"></textarea>
+      <div class="button-container">
+        <button type="submit" >Foglalás elküldése</button>
+      </div>
+      
+  </form>
+</div>
+  </main>
   <footer>
     <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
 </footer>

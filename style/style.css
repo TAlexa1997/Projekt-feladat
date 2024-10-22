@@ -67,6 +67,9 @@ body{
     background: hsla(194, 6%, 73%);
 }
 
+main{
+  margin-top: 20px;
+}
 .content {
   display: flex;
   justify-content: space-around;
