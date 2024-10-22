@@ -1,0 +1,167 @@
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-content {
+    width: 40%;
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input, 
+.form-container select, 
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: hsla(194, 6%, 73%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.calendar {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: hsla(194, 6%, 73%);
+    color: white;
+}
+
+.unavailable {
+    background-color: #ffcccc;
+}
+
+.calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    text-align: center;
+    color: #3b3b3b;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Verdana', sans-serif;
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #444;
+}
+
+.calendar-table th {
+    background-color: #4a5568;
+    color: white;
+}
+
+.available-2 {
+    background-color: #e6f4ea;
+}
+
+.available-1 {
+    background-color: #fff9e6;
+}
+
+.unavailable {
+    background-color: #f8e0e0;
+    color: #d9534f;
+}
+
+td {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #d4d4d4;
+}
+
+@media only screen and (max-width: 600px) {
+    .calendar-table th, .calendar-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-navigation select, .calendar-navigation button {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f1f1f1;
+}
+
+.calendar-navigation button {
+    background-color: #4a5568;
+    color: white;
+}
+
+.calendar-navigation button:hover {
+    background-color: #394150;
+}
