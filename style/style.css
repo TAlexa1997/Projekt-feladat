@@ -10,44 +10,54 @@ html{
     scroll-behavior: smooth;
 }
 
-header{
-    background-size: cover; 
-    background-position:center;
-    height: 350px; 
-    color: white; 
-    display: flex; 
-    justify-content: center; 
-    align-items:end;
+header {
+  background-size: cover; 
+  background-position: center;
+  height: 350px; 
+  color: white; 
+  display: flex;    
+  flex-direction: column; 
 }
 
-nav{
-    margin-bottom: 10px;
+header h1 {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 4rem;
+  color: black;
+}
+
+nav {
+  margin-top: auto; 
+  margin-bottom: 10px;
+  display: flex; 
+  align-items: end;
+  justify-content: center; 
 }
 
 nav a {
-    background-color:rgba(182, 188, 190, 0.63); 
-    color: black; 
-    font-weight: 700;
-    border: none; 
-    padding: 4px 8px; 
-    margin: 20px;
-    font-size: 16px; 
-    cursor: pointer; 
-    border-radius: 30px; 
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    text-decoration: none;
+  background-color: rgba(182, 188, 190, 0.63); 
+  color: black; 
+  font-weight: 700;
+  border: none; 
+  padding: 0.8rem 1.5rem; 
+  margin: 20px;
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  border-radius: 30px; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  text-decoration: none;
 }
 
 nav a:hover {
-    background-color: hsla(194, 6%, 73%);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
-    transform: translateY(-2px); 
+  background-color: hsla(194, 6%, 73%);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+  transform: translateY(-2px); 
 }
 
 nav a:active {
-    transform: translateY(0); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  transform: translateY(0); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 body{
@@ -57,6 +67,28 @@ body{
     background: hsla(194, 6%, 73%);
 }
 
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.text-content {
+  width: 40%;
+  padding: 20px;
+}
+
+
 footer {
     position: relative;
     left: 0;
@@ -64,5 +96,5 @@ footer {
     width: 100%;
     color: black;
     text-align: center;
-    display: block;
+    background-color: hsla(194, 6%, 73%);
  }
