@@ -164,28 +164,13 @@
             </div>
         </div>
 
-        <!-- Foglalási űrlap -->
-        <div class="form-container">
-            <h3>Foglalás</h3>
-            <form action="mailto:info@magocsiapartmanhaz.hu" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Név" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Telefonszám" required>
-                <input type="date" name="arrival" placeholder="Érkezés" required>
-                <input type="date" name="departure" placeholder="Távozás" required>
-                <select name="apartman" required>
-                    <option value="" disabled selected>Válassza ki az apartmant</option>
-                    <option value="1">1 apartman</option>
-                    <option value="2">2 apartman</option>
-                </select>
-                <input type="number" name="guests" placeholder="Hány fővel jön?" required>
-                <textarea name="message" placeholder="További megjegyzések" rows="4"></textarea>
-                <button type="submit">Foglalás elküldése</button>
-            </form>
-        </div>
-
         <!-- Naptár -->
-        <title>Foglalási naptár</title>
+        <!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalási Naptár - Hónap Váltás</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -249,46 +234,200 @@
                 padding: 5px;
             }
         }
+
+        /* Hónap és Év választó stílusok */
+        .calendar-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-navigation select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .calendar-navigation button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: hsla(194, 6%, 73%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .calendar-navigation button:hover {
+            background-color: hsla(194, 6%, 63%);
+        }
+
     </style>
 </head>
 <body>
 
 <div class="calendar-container">
-    <h3>Férőhelyeink</h3>
+    <h3>Foglalási Naptár</h3>
+
+    <!-- Hónap és Év váltás -->
+    <div class="calendar-navigation">
+        <button id="prevYear">Előző év</button>
+        <select id="monthSelector"></select>
+        <select id="yearSelector"></select>
+        <button id="nextYear">Következő év</button>
+    </div>
+
+    <!-- Naptár táblázat -->
     <table class="calendar-table">
-        <tr>
-            <th>Hétfő</th>
-            <th>Kedd</th>
-            <th>Szerda</th>
-            <th>Csütörtök</th>
-            <th>Péntek</th>
-            <th>Szombat</th>
-            <th>Vasárnap</th>
-        </tr>
-        <tr>
-            <td class="unavailable">2024-10-21<br>Foglalt</td>
-            <td class="available-2">2024-10-22<br>2 szabad</td>
-            <td class="available-1">2024-10-23<br>1 szabad</td>
-            <td class="available-2">2024-10-24<br>2 szabad</td>
-            <td class="unavailable">2024-10-25<br>Foglalt</td>
-            <td class="available-1">2024-10-26<br>1 szabad</td>
-            <td class="available-2">2024-10-27<br>2 szabad</td>
-        </tr>
-        <!-- További hetek -->
-        <tr>
-            <td class="available-1">2024-10-28<br>1 szabad</td>
-            <td class="available-2">2024-10-29<br>2 szabad</td>
-            <td class="unavailable">2024-10-30<br>Foglalt</td>
-            <td class="available-2">2024-10-31<br>2 szabad</td>
-            <td class="unavailable">2024-11-01<br>Foglalt</td>
-            <td class="available-1">2024-11-02<br>1 szabad</td>
-            <td class="available-2">2024-11-03<br>2 szabad</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Hétfő</th>
+                <th>Kedd</th>
+                <th>Szerda</th>
+                <th>Csütörtök</th>
+                <th>Péntek</th>
+                <th>Szombat</th>
+                <th>Vasárnap</th>
+            </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
     </table>
 </div>
 
+<script>
+    const today = new Date();
+    let currentMonth = 11; // December (index 11)
+    let currentYear = 2024;
+
+    // Az apartmanok foglaltsági adatai (hamis = foglalt, 2 = 2 apartman szabad, 1 = 1 apartman szabad)
+    const availabilityData = {
+        '2024': {
+            '12': Array(31).fill(2) // December: minden nap szabad (2 apartman)
+        }
+    };
+
+    // Hónapok nevei
+    const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
+
+    // Naptár megjelenítése
+    function showCalendar(month, year) {
+        const firstDay = new Date(year, month).getDay(); // Hónap első napjának helye a héten
+        const daysInMonth = new Date(year, month + 1, 0).getDate(); // Hány nap van a hónapban
+
+        const calendarBody = document.getElementById("calendarBody");
+        calendarBody.innerHTML = ""; // Korábbi naptár törlése
+
+        let date = 1;
+
+        for (let i = 0; i < 6; i++) { // 6 sor
+            const row = document.createElement("tr");
+
+            for (let j = 0; j < 7; j++) { // 7 oszlop (hét napjai)
+                const cell = document.createElement("td");
+
+                if (i === 0 && j < firstDay) {
+                    cell.innerHTML = ""; // Üres cellák az első sorban
+                } else if (date > daysInMonth) {
+                    break; // Naptár vége
+                } else {
+                    const availability = availabilityData[year] && availabilityData[year][month + 1] && availabilityData[year][month + 1][date - 1] !== undefined ? availabilityData[year][month + 1][date - 1] : 0;
+                    
+                    cell.innerHTML = `${year}-${month + 1}-${date}`;
+                    if (availability === 2) {
+                        cell.className = "available-2";
+                        cell.innerHTML += "<br>2 szabad";
+                    } else if (availability === 1) {
+                        cell.className = "available-1";
+                        cell.innerHTML += "<br>1 szabad";
+                    } else {
+                        cell.className = "unavailable";
+                        cell.innerHTML += "<br>Foglalt";
+                    }
+
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+    }
+
+    // Hónap és év választó kitöltése
+    function populateSelectors() {
+        const monthSelector = document.getElementById("monthSelector");
+        const yearSelector = document.getElementById("yearSelector");
+
+        months.forEach((month, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.text = month;
+            if (index === currentMonth) {
+                option.selected = true;
+            }
+            monthSelector.appendChild(option);
+        });
+
+        for (let i = 2023; i <= 2080; i++) { // Példa évválasztó 2023-2080 között
+            const option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            if (i === currentYear) {
+                option.selected = true;
+            }
+            yearSelector.appendChild(option);
+        }
+    }
+
+    // Hónap és év változtatása
+    function changeMonthYear() {
+        currentMonth = parseInt(document.getElementById("monthSelector").value);
+        currentYear = parseInt(document.getElementById("yearSelector").value);
+        showCalendar(currentMonth, currentYear);
+    }
+
+    // Előző és következő év gombok
+    document.getElementById("prevYear").addEventListener("click", () => {
+        currentYear--;
+        changeMonthYear();
+    });
+
+    document.getElementById("nextYear").addEventListener("click", () => {
+        currentYear++;
+        changeMonthYear();
+    });
+
+    // Hónap és év választó események
+    document.getElementById("monthSelector").addEventListener("change", changeMonthYear);
+    document.getElementById("yearSelector").addEventListener("change", changeMonthYear);
+
+    // Első betöltés
+    populateSelectors();
+    showCalendar(currentMonth, currentYear);
+</script>
+
 </body>
 </html>
+
+<!-- Foglalási űrlap -->
+<div class="form-container">
+    <h3>Foglalás</h3>
+    <form action="mailto:info@magocsiapartmanhaz.hu" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Név" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Telefonszám" required>
+        <input type="date" name="arrival" placeholder="Érkezés" required>
+        <input type="date" name="departure" placeholder="Távozás" required>
+        <select name="apartman" required>
+            <option value="" disabled selected>Válassza ki az apartmant</option>
+            <option value="1">1 apartman</option>
+            <option value="2">2 apartman</option>
+        </select>
+        <input type="number" name="guests" placeholder="Hány fővel jön?" required>
+        <textarea name="message" placeholder="További megjegyzések" rows="4"></textarea>
+        <button type="submit">Foglalás elküldése</button>
+    </form>
+</div>
 
     <footer>
         <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
