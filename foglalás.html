@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Mágocsi Apartmanház</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: hsla(194, 6%, 73%);
+        }
+
+        header {
+            background-size: cover;
+            background-position: bottom;
+            height: 300px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        nav {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            background-color: rgba(182, 188, 190, 0.63);
+            color: black;
+            font-weight: 700;
+            border: none;
+            padding: 4px 8px;
+            margin: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: hsla(194, 6%, 73%);
+            transform: translateY(-2px);
+        }
+
+        nav a:active {
+            transform: translateY(0);
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .text-content {
+            width: 40%;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input, 
+        .form-container select, 
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: hsla(194, 6%, 73%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            background-color: hsla(194, 6%, 73%);
+        }
+
+        .calendar {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: hsla(194, 6%, 73%);
+            color: white;
+        }
+
+        .unavailable {
+            background-color: #ffcccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background-image: url('img/IMG_8677.jpeg');">
+        <h1>Mágocsi Apartmanház</h1>
+        <nav>
+            <a href="main.html">Főoldal</a>
+            <a href="galeria.html">Galéria</a>
+            <a href="foglalás.html">Foglalás</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+    </header>
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalási Naptár</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .calendar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            text-align: center;
+            color: #3b3b3b;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .calendar-table th, .calendar-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .calendar-table th {
+            background-color: #4a5568;
+            color: white;
+        }
+
+        .available-2 {
+            background-color: #e6f4ea;
+        }
+
+        .available-1 {
+            background-color: #fff9e6;
+        }
+
+        .unavailable {
+            background-color: #f8e0e0;
+            color: #d9534f;
+        }
+
+        td {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        td:hover {
+            background-color: #d4d4d4;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .calendar-table th, .calendar-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        .calendar-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-navigation select, .calendar-navigation button {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f1f1f1;
+        }
+
+        .calendar-navigation button {
+            background-color: #4a5568;
+            color: white;
+        }
+
+        .calendar-navigation button:hover {
+            background-color: #394150;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar-container">
+    <h3>Foglaltságunk</h3>
+
+    <!-- Hónap és Év váltás -->
+    <div class="calendar-navigation">
+        <button id="prevYear">Előző év</button>
+        <select id="monthSelector"></select>
+        <select id="yearSelector"></select>
+        <button id="nextYear">Következő év</button>
+    </div>
+
+    <!-- Naptár táblázat -->
+    <table class="calendar-table">
+        <thead>
+            <tr>
+                <th>Hétfő</th>
+                <th>Kedd</th>
+                <th>Szerda</th>
+                <th>Csütörtök</th>
+                <th>Péntek</th>
+                <th>Szombat</th>
+                <th>Vasárnap</th>
+            </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+    </table>
+</div>
+
+<script>
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    // Foglaltsági adatok példája (2 apartman szabad)
+    const availabilityData = {
+        '2024': {
+            '10': [2, 2, 1, 1, 0, 0, 2, 1, 1, 0, 2, 2, 0, 1, 1, 2, 2, 0, 0, 1, 2, 2, 0, 1, 0, 2, 2, 0, 1, 1, 0] // Október például
+        }
+    };
+
+    const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
+
+    function showCalendar(month, year) {
+        const firstDay = new Date(year, month).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        const calendarBody = document.getElementById("calendarBody");
+        calendarBody.innerHTML = ""; // Naptár törlése
+
+        let date = 1;
+
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement("tr");
+
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement("td");
+
+                if (i === 0 && j < firstDay) {
+                    cell.innerHTML = ""; // Üres cellák az első sorban
+                } else if (date > daysInMonth) {
+                    break; // Naptár vége
+                } else {
+                    const availability = availabilityData[year] && availabilityData[year][month + 1] && availabilityData[year][month + 1][date - 1] !== undefined ? availabilityData[year][month + 1][date - 1] : 0;
+
+                    // Csak a nap számát jelenítjük meg
+                    cell.innerHTML = date;
+
+                    // Színezés az apartman elérhetőség alapján és a vendégek láthatják, hogy szabad-e
+                    if (availability === 2) {
+                        cell.className = "available-2";
+                        cell.innerHTML += "<br>2 szabad";
+                    } else if (availability === 1) {
+                        cell.className = "available-1";
+                        cell.innerHTML += "<br>1 szabad";
+                    } else {
+                        cell.className = "unavailable";
+                        cell.innerHTML += "<br>Foglalt";
+                    }
+
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+    }
+
+    // Hónap és év kiválasztásának kitöltése
+    function populateSelectors() {
+        const monthSelector = document.getElementById("monthSelector");
+        const yearSelector = document.getElementById("yearSelector");
+
+        months.forEach((month, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.text = month;
+            if (index === currentMonth) {
+                option.selected = true;
+            }
+            monthSelector.appendChild(option);
+        });
+
+        for (let i = 2023; i <= 2040; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            if (i === currentYear) {
+                option.selected = true;
+            }
+            yearSelector.appendChild(option);
+        }
+    }
+
+    // Hónap és év változtatása
+    function changeMonthYear() {
+        currentMonth = parseInt(document.getElementById("monthSelector").value);
+        currentYear = parseInt(document.getElementById("yearSelector").value);
+        showCalendar(currentMonth, currentYear);
+    }
+
+    // Előző és következő év gombok
+    document.getElementById("prevYear").addEventListener("click", () => {
+        currentYear--;
+        changeMonthYear();
+    });
+
+    document.getElementById("nextYear").addEventListener("click", () => {
+        currentYear++;
+        changeMonthYear();
+    });
+
+    // Hónap és év választó események
+    document.getElementById("monthSelector").addEventListener("change", changeMonthYear);
+    document.getElementById("yearSelector").addEventListener("change", changeMonthYear);
+
+    // Első betöltés
+    populateSelectors();
+    showCalendar(currentMonth, currentYear);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+                            <!-- Foglalási űrlap -->
+        <div class="form-container">
+            <h3>Foglalás</h3>
+            <form action="mailto:info@magocsiapartmanhaz.hu" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Név" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Telefonszám" required>
+                <input type="date" name="arrival" placeholder="Érkezés" required>
+                <input type="date" name="departure" placeholder="Távozás" required>
+                <select name="apartman" required>
+                    <option value="" disabled selected>Válassza ki az apartmant</option>
+                    <option value="1">1 apartman</option>
+                    <option value="2">2 apartman</option>
+                </select>
+                <input type="number" name="guests" placeholder="Hány fővel jön? (max. 10 fő)" required>
+                <textarea name="message" placeholder="További megjegyzések" rows="4"></textarea>
+                <button type="submit">Foglalás elküldése</button>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
+    </footer>
+
+</body>
+<html>
