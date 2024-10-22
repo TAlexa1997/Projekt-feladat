@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/foglalas.css">
+    <title>Foglalási Naptár</title>
+</head>
+<body>
+    <header style="background-image: url('img/IMG_8677.jpeg');">
+        <h1>Mágocsi Apartmanház</h1>
+        <nav>
+            <a href="main.html">Főoldal</a>
+            <a href="galeria.html">Galéria</a>
+            <a href="foglalas.html">Foglalás</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+    </header>
+    <main>
+        <div class="calendar-container">
+            <h3>Szabad időpontok</h3>
+            <div class="calendar-navigation">
+                <button id="prevYear">Előző év</button>
+                <select id="monthSelector"></select>
+                <select id="yearSelector"></select>
+                <button id="nextYear">Következő év</button>
+            </div>
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Hétfő</th>
+                        <th>Kedd</th>
+                        <th>Szerda</th>
+                        <th>Csütörtök</th>
+                        <th>Péntek</th>
+                        <th>Szombat</th>
+                        <th>Vasárnap</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody"></tbody>
+            </table>
+        </div>
+        <div class="form-container">
+            <h3>Foglalás</h3>
+            <form action="mailto:info@magocsiapartmanhaz.hu" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Név" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Telefonszám" required>
+                <input type="date" name="arrival" placeholder="Érkezés" required>
+                <input type="date" name="departure" placeholder="Távozás" required>
+                <select name="apartman" required>
+                    <option value="" disabled selected>Válassza ki az apartmant</option>
+                    <option value="1">1 apartman</option>
+                    <option value="2">2 apartman</option>
+                </select>
+                <input type="number" name="guests" placeholder="Hány fővel jön? (max. 10 fő)" required>
+                <textarea name="message" placeholder="További megjegyzések" rows="4"></textarea>
+                <button type="submit">Foglalás elküldése</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
+    </footer>
+
+<script src="script/foglalas.js"></script>
+</body>
+<html>

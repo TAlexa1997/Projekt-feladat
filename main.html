@@ -1,202 +1,136 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Mágocsi Apartmanház</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: hsla(194, 6%, 73%);
-        }
+      .content {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        header {
-            background-size: cover;
-            background-position: bottom;
-            height: 300px;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: end;
-        }
+      .content img {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+      }
 
-        nav {
-            margin-bottom: 10px;
-        }
+      .text-content {
+        width: 40%;
+        padding: 20px;
+      }
 
-        nav a {
-            background-color: rgba(182, 188, 190, 0.63);
-            color: black;
-            font-weight: 700;
-            border: none;
-            padding: 4px 8px;
-            margin: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+      .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        nav a:hover {
-            background-color: hsla(194, 6%, 73%);
-            transform: translateY(-2px);
-        }
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
 
-        nav a:active {
-            transform: translateY(0);
-        }
+      .form-container button {
+        background-color: hsla(194, 6%, 73%);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-        .content {
-            display: flex;
-            justify-content: space-around;
-            margin: 50px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .content img {
-            width: 50%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .text-content {
-            width: 40%;
-            padding: 20px;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container input, 
-        .form-container select, 
-        .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-container button {
-            background-color: hsla(194, 6%, 73%);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        footer {
-            position: relative;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: black;
-            text-align: center;
-            padding: 20px;
-            background-color: hsla(194, 6%, 73%);
-        }
-
-        .calendar {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ccc;
-        }
-
-        th {
-            background-color: hsla(194, 6%, 73%);
-            color: white;
-        }
-
-        .unavailable {
-            background-color: #ffcccc;
-        }
+      footer {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        background-color: hsla(194, 6%, 73%);
+      }
     </style>
-</head>
-<body>
-
-    <header style="background-image: url('img/IMG_8677.jpeg');">
-        <h1>Mágocsi Apartmanház</h1>
-        <nav>
-            <a href="main.html">Főoldal</a>
-            <a href="galeria.html">Galéria</a>
-            <a href="foglalás.html">Foglalás</a>
-            <a href="kapcsolat.html">Kapcsolat</a>
-        </nav>
+  </head>
+  <body>
+    <header style="background-image: url('img/IMG_8677.jpeg')">
+      <h1>Mágocsi Apartmanház</h1>
+      <nav>
+        <a href="main.html">Főoldal</a>
+        <a href="galeria.html">Galéria</a>
+        <a href="foglalas.html">Foglalás</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
     </header>
 
     <main>
-        <div class="content">
-            <img src="img/IMG_8694.JPG" alt="Apartmanház">
-            <div class="text-content">
-                <h2>Kikapcsolódás és horgászat az erdő közelében</h2>
-                <p>Szeretettel várjuk több napra érkező vendégeinket 4+2 ágyas apartmanházunkban a horgásztó szomszédságában. Az apartmanház minden szükséges felszereléssel rendelkezik ahhoz, hogy kellemesen, és komfortosan érezhessék magukat vendégeink pihenésük idején. A közelben számos látnivaló, kikapcsolódási lehetőség megtalálható.</p>
-    
-            </div>
+      <div class="content">
+        <img src="img/IMG_8694.JPG" alt="Apartmanház" />
+        <div class="text-content">
+          <h2>Kikapcsolódás és horgászat az erdő közelében</h2>
+          <p>
+            Szeretettel várjuk több napra érkező vendégeinket 4+2 ágyas
+            apartmanházunkban a horgásztó szomszédságában. Az apartmanház minden
+            szükséges felszereléssel rendelkezik ahhoz, hogy kellemesen, és
+            komfortosan érezhessék magukat vendégeink pihenésük idején. A
+            közelben számos látnivaló, kikapcsolódási lehetőség megtalálható.
+          </p>
         </div>
+      </div>
 
-        <main>
-            <div class="content">
-                <img src="img/IMG_8704.JPG" alt="Apartmanház">
-                <div class="text-content">
-                    <h2>Apartmanjainkról</h2>
-                    <p>A Mágocsi Horgásztó szomszédságában található 2 db 4+2 ágyas apartmanjainkban várjuk kedves vendégeinket legyen szó családi nyaralásról, néhány napos horgászatról, vagy vadászatról.
-                        Az apartmanok 54 négyzetméter alapterületűek, 2 hálószobával, amerikai konyhás nappalival, valamint fürdővel és wc-vel felszereltek.
-                        Apartmajaink minden igényt kielégítő, kényelmes, nyugodt pihenést biztosítanak a hozzánk látogató vendégek számára.
-                        A szállás ára tartalmazza a nappali, nyitvatartási időn belüli horgászat költségeit is. A nálunk megszálló vendégeknek lehetőséget biztosítunk előzetes egyeztetés alapján az éjszakai horgászatra is.</p>
-        
-                </div>
-            </div>
+      <div class="content">
+        <img src="img/IMG_8704.JPG" alt="Apartmanház" />
+        <div class="text-content">
+          <h2>Apartmanjainkról</h2>
+          <p>
+            A Mágocsi Horgásztó szomszédságában található 2 db 4+2 ágyas
+            apartmanjainkban várjuk kedves vendégeinket legyen szó családi
+            nyaralásról, néhány napos horgászatról, vagy vadászatról. Az
+            apartmanok 54 négyzetméter alapterületűek, 2 hálószobával, amerikai
+            konyhás nappalival, valamint fürdővel és wc-vel felszereltek.
+            Apartmajaink minden igényt kielégítő, kényelmes, nyugodt pihenést
+            biztosítanak a hozzánk látogató vendégek számára. A szállás ára
+            tartalmazza a nappali, nyitvatartási időn belüli horgászat
+            költségeit is. A nálunk megszálló vendégeknek lehetőséget
+            biztosítunk előzetes egyeztetés alapján az éjszakai horgászatra is.
+          </p>
+        </div>
+      </div>
 
-            <main>
-                <div class="content">
-                    <img src="img/IMG_8718.JPG" alt="Apartmanház">
-                    <div class="text-content">
-                        <h2>Apartman árak</h2>
-                            <p>Egy éjszakányi bérlés esetén 35.000 Ft/éj
-                                2-3 éjszakányi bérlés esetén 26.000 Ft/éj
-                                4, vagy annál több éjszaka esetén 23.000Ft/éj
-                                Hétvégi felár: 5.000 Ft 1-3 éjszaka esetén, amennyiben valamelyik nap hétvégére (péntek, szombat, vasárnap) esik 
-                                Maximum 2 fő esetén 10% kedvezmény az árakból
-                                Nyitvatartási időn belül a horgászat díját az ár tartalmazza
-                                Előzetes egyeztetés alapján éjszakai horgászat lehetséges.</p>
-
-            </div>
-            </div>
-
-
-
-
+      <div class="content">
+        <img src="img/IMG_8718.JPG" alt="Apartmanház" />
+        <div class="text-content">
+          <h2>Apartman árak</h2>
+          <p>
+            Egy éjszakányi bérlés esetén 35.000 Ft/éj 2-3 éjszakányi bérlés
+            esetén 26.000 Ft/éj 4, vagy annál több éjszaka esetén 23.000Ft/éj
+            Hétvégi felár: 5.000 Ft 1-3 éjszaka esetén, amennyiben valamelyik
+            nap hétvégére (péntek, szombat, vasárnap) esik Maximum 2 fő esetén
+            10% kedvezmény az árakból Nyitvatartási időn belül a horgászat díját
+            az ár tartalmazza Előzetes egyeztetés alapján éjszakai horgászat
+            lehetséges.
+          </p>
+        </div>
+      </div>
+    </main>
     <footer>
-        <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
+      <p>&copy; 2024 Mágocsi Apartmanház. Minden jog fenntartva.</p>
     </footer>
-
-</body>
-<html>
+  </body>
+  <html></html>
+</html>
